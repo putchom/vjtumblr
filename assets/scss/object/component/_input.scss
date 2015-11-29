@@ -1,0 +1,32 @@
+.c-input__range {
+  width: 330px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  -webkit-appearance: none;
+  border: 1px solid $key-color;
+  height: 8px;
+  background-position: left center;
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 30px;
+}
+.c-input__range::-webkit-slider-thumb {
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  height: 30px;
+  width: 15px;
+  background-color: $key-color;
+  box-shadow: none;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}

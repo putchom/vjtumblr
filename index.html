@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Controller</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="RootCtrl as root" class="body-controller">
+    <div class="main">
+      <h1 class="main__heading">VJ Tumblr ver.1.0.0</h1>
+      <section class="monitor u-clearfix">
+        <section class="monitor__item channel-a">
+          <h2 class="c-heading">Ch.A</h2>
+          <div class="c-frame channel-a__image-wrap">
+            <img src="./assets/images/blank_image.png" class="channel-a__image">
+          </div>
+          <div class="channel__control">
+            <span class="c-button c-button--primary channel-a__cue-button">Cue</span>
+            <span class="c-button c-button--secondary channel-a__clear-button">Clear</span>
+            <div class="channel__tags channel-a__tags"></div>
+          </div>
+        </section>
+        <section class="monitor__item master">
+          <h2 class="c-heading">Master</h2>
+          <div class="c-frame master__image-wrap">
+            <div class="master__image-wrap--a">
+              <img src="./assets/images/blank_image.png" class="master__image--a">
+            </div>
+            <div class="master__image-wrap--b">
+              <img src="./assets/images/blank_image.png" class="master__image--b">
+            </div>
+            <div class="master__black">
+            </div>
+            <div class="master__white">
+            </div>
+          </div>
+          <div class="fader">
+            <div>
+              <input id="fader__ab" type="range" max="100" min="0" value="0" class="c-input__range fader__ab-range">
+            </div>
+            <div>
+              <input id="fader__bw" type="range" max="100" min="-100" value="0" class="c-input__range">
+            </div>
+          </div>
+        </section>
+        <section class="monitor__item channel-b">
+          <h2 class="c-heading">Ch.B</h2>
+          <div class="c-frame channel-b__image-wrap">
+            <img src="./assets/images/blank_image.png" class="channel-b__image">
+          </div>
+          <div class="channel__control">
+            <span class="c-button c-button--primary channel-b__cue-button">Cue</span>
+            <span class="c-button c-button--secondary channel-b__clear-button">Clear</span>
+            <div class="channel__tags channel-b__tags"></div>
+          </div>
+        </section>
+      </section>
+      <div class="u-clearfix">
+        <section class="tags">
+          <h2 class="c-heading">Tags</h2>
+          <div class="c-frame tags__items-wrap">
+            <div class="tags__input-search-wrap">
+              <input type="text" class="tags__input-search" placeholder="Search">
+            </div>
+            <div class="sk-wave tags__items-loading c-loading">
+              <div class="sk-rect sk-rect1"></div>
+              <div class="sk-rect sk-rect2"></div>
+              <div class="sk-rect sk-rect3"></div>
+              <div class="sk-rect sk-rect4"></div>
+              <div class="sk-rect sk-rect5"></div>
+              <div class="c-loading-text">Analyzing...</div>
+            </div>
+          </div>
+        </section>
+        <section class="resources">
+          <h2 class="c-heading">Resources</h2>
+          <div class="c-frame resources__items-wrap u-clearfix">
+            <div class="resources__text">Please select a tag.</div>
+            <div class="resources__items">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.c-frame {
+  border: 1px solid $key-color;
+  box-sizing: border-box;
+}
+.c-frame::-webkit-scrollbar {
+  all:unset;
+  width: 12px;
+  background: transparent;
+}
+.c-frame::-webkit-scrollbar-track {
+  all:unset;
+  background: transparent;
+}
+.c-frame::-webkit-scrollbar-thumb {
+  all:unset;
+  background: transparent;
+  background-color: $key-color-grey;
+}
+.c-frame::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  background-color: $key-color-grey;
+}

@@ -1,0 +1,9 @@
+.DS_Store
+build/
+dist/
+vendor/
+node_modules/
+npm-debug.log
+css/style.css
+js/app.js
+gulp/app_config.coffee

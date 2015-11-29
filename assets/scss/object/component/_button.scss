@@ -1,0 +1,31 @@
+.c-button {
+  box-sizing: border-box;
+  width: 162px;
+  height: 30px;
+  line-height: 32px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  color: $key-color-black;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: $key-color;
+  border: 0;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  &:active {
+    outline: 0;
+  }
+}
+.c-button--primary {
+  background-color: $key-color;
+  color: $key-color-black;
+}
+.c-button--secondary {
+  background-color: $key-color-grey;
+  color: white;
+}

@@ -1,0 +1,10 @@
+@import '../../../../node_modules/spinkit/scss/spinners/3-wave.scss';
+
+.c-loading {
+  .sk-rect {
+    background-color: $key-color-grey;
+  }
+}
+.c-loading-text {
+  color: $key-color-grey;
+}

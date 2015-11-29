@@ -1,0 +1,29 @@
+{
+  "name": "vjtumblr",
+  "version": "1.0.0",
+  "description": "tumblr VJ System",
+  "main": "index.js",
+  "scripts": {
+    "release": "node release.js",
+    "build": "node_modules/.bin/electron ."
+  },
+  "devDependencies": {
+    "electron-packager": "^5.1.1",
+    "electron-prebuilt": "^0.35.1",
+    "require-dir": "^0.3.0",
+    "sanitize.css": "^3.0.0"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "material-colors": "^1.0.0",
+    "spinkit": "^1.2.5"
+  }
+}

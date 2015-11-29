@@ -1,0 +1,13 @@
+.body-about {
+  background-color: $key-color-black;
+  color: $key-color;
+  width: 100%;
+  height: 100%;
+  font-family: 'Source Code Pro',Verdana,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif, ;
+  display: table;
+  text-align: center;
+}
+.about {
+  display: table-cell;
+  vertical-align: middle;
+}
