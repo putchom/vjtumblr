@@ -1,6 +1,9 @@
+// jQueryの読み込み
+var $ = jQuery = require("./js/jquery.min.js");
+
 $(function(){
-  var userName = 'data_user_name';
-  var api_key = 'data_api_key';
+  var userName = 'data_user_name',
+      api_key = 'data_api_key';
 
   // tumblr画像の読み込み
   function loadGif (tag) {
@@ -73,16 +76,16 @@ $(function(){
 
   // タグの絞込み
   function searchTag() {
-    var input = $('.tags__input-search');
-    var words = $('.tags__items li');
-    var timeout_id = null;
+    var input = $('.tags__input-search'),
+        words = $('.tags__items li'),
+        timeout_id = null;
 
     input.on('keyup', function(){
       console.log('hoge');
       if(timeout_id) clearTimeout(timeout_id);
       timeout_id = setTimeout(function(){
         timeout_id = null;
-        try{
+        try {
           var word_re = new RegExp(input.val(), "i");
           words.each(function(){
             var display = (this.innerHTML.match(word_re) ? "block" : "none");
@@ -116,8 +119,8 @@ $(function(){
   // Cueボタンのタップ
   function tapCue(channel) {
     $('.channel-'+channel+'__cue-button').on('click', function() {
-      var imgSrc = $('.channel-'+channel+'__image').attr('src');
-      var now = new Date().getTime();
+      var imgSrc = $('.channel-'+channel+'__image').attr('src'),
+          now = new Date().getTime();
       $('.channel-'+channel+'__image, .master__image--'+channel).attr('src', imgSrc + '?' + now);
     });
   }
