@@ -2,6 +2,7 @@
 var $ = jQuery = require("./js/jquery.min.js");
 
 $(function(){
+  // gulpのreplaceタスクでapp_config.coffeeに設定したnameとapi_keyが入る
   var userName = 'data_user_name',
       api_key = 'data_api_key';
 
