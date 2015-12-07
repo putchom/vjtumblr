@@ -42,26 +42,21 @@ function openMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1070,
     height: 710,
-    resizable: false,
-    overlayScrollbars: true,
-    'overlay-scrollbars': false,
-    'node-integration': false
+    resizable: false
   });
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 }
 function openVideoWindow() {
   videoWindow = new BrowserWindow({
     width: 800,
-    height: 450,
-    'node-integration': false
+    height: 450
   });
   videoWindow.loadUrl('file://' + __dirname + '/video.html');
 }
 function openAboutWindow() {
   aboutWindow = new BrowserWindow({
     width: 400,
-    height: 200,
-    'node-integration': false
+    height: 200
   });
   aboutWindow.loadUrl('file://' + __dirname + '/about.html');
 }
