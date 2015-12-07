@@ -33,3 +33,14 @@
   width: 100%;
   height: 100%;
 }
+/* 中央寄せ */
+.c-aspect-ratio__table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.c-aspect-ratio__table > * {
+  display: table-cell;
+  vertical-align: middle;
+}
