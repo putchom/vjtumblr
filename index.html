@@ -7,12 +7,16 @@
   </head>
   <body ng-app="app" ng-controller="RootCtrl as root" class="body-controller">
     <div class="main">
-      <h1 class="main__heading">VJ Tumblr ver.1.0.0</h1>
+      <section class="main__heading-wrap">
+        <h1 class="main__heading">VJ Tumblr ver.1.0.0</h1>
+      </section>
       <section class="monitor u-clearfix">
         <section class="monitor__item channel-a">
           <h2 class="c-heading">Ch.A</h2>
-          <div class="c-frame channel-a__image-wrap">
-            <img src="./assets/images/blank_image.png" class="channel-a__image">
+          <div class="c-frame c-aspect-ratio c-aspect-ratio__16-9 channel-a__image-wrap">
+            <div class="c-aspect-ratio__inner">
+              <img src="./assets/images/blank_image.png" class="channel-a__image">
+            </div>
           </div>
           <div class="channel__control">
             <span class="c-button c-button--primary channel-a__cue-button">Cue</span>
@@ -22,16 +26,18 @@
         </section>
         <section class="monitor__item master">
           <h2 class="c-heading">Master</h2>
-          <div class="c-frame master__image-wrap">
-            <div class="master__image-wrap--a">
-              <img src="./assets/images/blank_image.png" class="master__image--a">
-            </div>
-            <div class="master__image-wrap--b">
-              <img src="./assets/images/blank_image.png" class="master__image--b">
-            </div>
-            <div class="master__black">
-            </div>
-            <div class="master__white">
+          <div class="c-frame c-aspect-ratio c-aspect-ratio__16-9 master__image-wrap">
+            <div class="c-aspect-ratio__inner">
+              <div class="master__image-wrap--a">
+                <img src="./assets/images/blank_image.png" class="master__image--a">
+              </div>
+              <div class="master__image-wrap--b">
+                <img src="./assets/images/blank_image.png" class="master__image--b">
+              </div>
+              <div class="master__black">
+              </div>
+              <div class="master__white">
+              </div>
             </div>
           </div>
           <div class="fader">
@@ -45,8 +51,10 @@
         </section>
         <section class="monitor__item channel-b">
           <h2 class="c-heading">Ch.B</h2>
-          <div class="c-frame channel-b__image-wrap">
-            <img src="./assets/images/blank_image.png" class="channel-b__image">
+          <div class="c-frame c-aspect-ratio c-aspect-ratio__16-9 channel-b__image-wrap">
+            <div class="c-aspect-ratio__inner">
+              <img src="./assets/images/blank_image.png" class="channel-b__image">
+            </div>
           </div>
           <div class="channel__control">
             <span class="c-button c-button--primary channel-b__cue-button">Cue</span>
@@ -55,7 +63,7 @@
           </div>
         </section>
       </section>
-      <div class="u-clearfix">
+      <div class="resources-and-tags">
         <section class="tags">
           <h2 class="c-heading">Tags</h2>
           <div class="c-frame tags__items-wrap">

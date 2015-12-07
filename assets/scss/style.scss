@@ -4,6 +4,7 @@
 @import 'foundation/_normalize';
 @import 'foundation/_color';
 @import 'foundation/_fonts';
+@import 'foundation/_grid';
 
 /* ==========================================================================
   Layout
@@ -18,8 +19,9 @@
 /* ==========================================================================
 Object
 ========================================================================== */
-@import 'object/component/_input';
-@import 'object/component/_loading';
+@import 'object/component/_aspect_ratio';
 @import 'object/component/_frame';
 @import 'object/component/_button';
+@import 'object/component/_input';
+@import 'object/component/_loading';
 @import 'object/utility/_clearfix';

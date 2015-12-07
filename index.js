@@ -40,8 +40,8 @@ var template = [
 var menu = Menu.buildFromTemplate(template);
 function openMainWindow() {
   mainWindow = new BrowserWindow({
-    width: 1070,
-    height: 710,
+    width: 1000,
+    height: 680,
     resizable: false
   });
   mainWindow.loadUrl('file://' + __dirname + '/index.html');

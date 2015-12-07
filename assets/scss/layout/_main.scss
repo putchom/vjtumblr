@@ -9,12 +9,15 @@ html {
   font-family: 'Source Code Pro',Verdana,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif, ;
 }
 .main {
-  width: 1050px;
-  padding: 20px;
-  box-sizing: border-box;
+  @include container;
+  padding: 10px;
+}
+.main__heading-wrap {
+  @include container;
 }
 .main__heading {
-  margin-bottom: 10px;
+  @include span(12 of 12);
+  margin: 10px 0;
 }
 .c-heading {
   background-color: $key-color;

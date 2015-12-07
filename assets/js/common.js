@@ -24,7 +24,7 @@ $(function(){
                       for(var n in v){
                         if(n == 'url'){
                           var image = v[n];
-                          $('.resources__items').append('<div class="resources__item"><span class="resources__item-button resources__item-button--a">A</span><span class="resources__item-button resources__item-button--b">B</span><img src="'+image+'" class="resources__item-image"><span class="resources__item-tags">'+tags+'</span></div>');
+                          $('.resources__items').append('<div class="resources__item c-aspect-ratio c-aspect-ratio__16-9"><div class="c-aspect-ratio__inner"><span class="resources__item-button resources__item-button--a"><span class="resources__item-button-inner">A</span></span><span class="resources__item-button resources__item-button--b"><span class="resources__item-button-inner">B</span></span><img src="'+image+'" class="resources__item-image"><span class="resources__item-tags">'+tags+'</span></div></div>');
                         }
                       }
                     }

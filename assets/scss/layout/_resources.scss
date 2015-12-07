@@ -1,19 +1,21 @@
+.resources-and-tags {
+  @include container;
+}
 .resources {
-  float: left;
-  margin-left: 5px;
-  width: 670px;
+  @include span(8 of 12);
   height: 300px;
 }
 .resources__items-wrap {
-  width: 670px;
+  width: 100%;
   height: 280px;
   overflow-y: scroll;
   position: relative;
 }
 .resources__items {
+  @include container;
 }
 .resources__item {
-  width: 160px;
+  @include span(3 of 12 no-gutters);
   height: 90px;
   float: left;
   overflow: hidden;
@@ -21,11 +23,10 @@
 }
 .resources__item-button {
   display: block;
-  width: 80px;
-  height: 90px;
+  width: 50%;
+  height: 100%;
   font-size: 24px;
   text-align: center;
-  line-height: 90px;
   background-color: $key-color-black;
   color: $key-color;
   opacity: 0;
@@ -36,11 +37,21 @@
     left: 0;
   }
   &.resources__item-button--b {
-    left: 80px;
+    left: 50%;
   }
   &:hover {
     opacity: 0.8;
   }
+}
+.resources__item-button-inner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -14px;
+  margin-left: -10px;
 }
 .resources__item-image {
   display: block;

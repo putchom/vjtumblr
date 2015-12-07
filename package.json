@@ -24,6 +24,7 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
     "material-colors": "^1.0.0",
-    "spinkit": "^1.2.5"
+    "spinkit": "^1.2.5",
+    "susy": "^2.2.6"
   }
 }

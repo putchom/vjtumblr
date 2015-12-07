@@ -1,34 +1,23 @@
 .monitor {
-  margin-bottom: 10px;
+  @include container;
 }
 .monitor__item {
-  float: left;
-  margin: 0 5px;
-  &:nth-child(3n) {
-    margin-right: 0;
-  }
-  &:nth-child(3n+1) {
-    margin-left: 0;
-  }
+  @include span(4 of 12);
 }
 .channel-a__image-wrap,
 .channel-b__image-wrap {
-  width: 330px;
-  height: 186px;
   overflow: hidden;
 }
 .master__image-wrap {
-  width: 330px;
   position: relative;
-  height: 186px;
   overflow: hidden;
 }
 .master__image-wrap--a,
 .master__image-wrap--b {
-  width: 330px;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 .channel-a__image,
 .channel-b__image,
@@ -44,8 +33,8 @@
 }
 .master__black,
 .master__white {
-  width: 336px;
-  height: 186px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -63,20 +52,39 @@
   box-sizing: border-box;
 }
 .channel__tags {
-  width: 330px;
-  height: 40px;
+  width: 100%;
+  height: 30px;
+  overflow-y: scroll;
+}
+.channel__tags::-webkit-scrollbar {
+  all:unset;
+  width: 12px;
+  background: transparent;
+}
+.channel__tags::-webkit-scrollbar-track {
+  all:unset;
+  background: transparent;
+}
+.channel__tags::-webkit-scrollbar-thumb {
+  all:unset;
+  background: transparent;
+  background-color: $key-color-grey;
+}
+.channel__tags::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  background-color: $key-color-grey;
 }
 .channel__tag {
   box-sizing: border-box;
-  height: 18px;
-  line-height: 20px;
+  height: 14px;
+  line-height: 15px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
   color: white;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 700;
   background-color: $key-color-grey;
   border: 0;

@@ -1,7 +1,5 @@
 .tags {
-  float: left;
-  margin-right: 5px;
-  width: 330px;
+  @include span(4 of 12);
   height: 300px;
 }
 .tags__items-wrap {
