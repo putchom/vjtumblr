@@ -79,4 +79,9 @@ app.on('ready', function() {
   ipc.on('assign-video-window', function(event, imageUrl, channel) {
     videoWindow.webContents.send('assign-video-window', imageUrl, channel);
   });
+
+  // ABフェーダーの値をvideoWindowに送る
+  ipc.on('send-ab-fader-val', function(event, val) {
+    videoWindow.webContents.send('send-ab-fader-val', val);
+  });
 });

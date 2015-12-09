@@ -146,9 +146,14 @@ $(function(){
   tapClear('b');
 
   // AB切り替えフェーダー
+  function sendFaderABVal(val) {
+    ipc.send('send-ab-fader-val', val);
+  }
   $('#fader__ab').on('input', function() {
-    $('.master__image--a').attr('style', 'opacity:' + (1 - $('#fader__ab').val()/100));
-    $('.master__image--b').attr('style', 'opacity:' + $('#fader__ab').val()/100);
+    var faderABVal = $('#fader__ab').val();
+    $('.master__image--a').attr('style', 'opacity:' + (1 - faderABVal/100));
+    $('.master__image--b').attr('style', 'opacity:' + faderABVal/100);
+    sendFaderABVal(faderABVal);
   });
 
   // 明暗切り替えフェーダー

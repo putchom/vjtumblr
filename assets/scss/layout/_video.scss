@@ -16,6 +16,12 @@
   left: 0;
   width: 100%;
 }
+.video__channel-a {
+  z-index: 1;
+}
+.video__channel-b {
+  z-index: 0;
+}
 .video__channel-image {
   width: 100%;
 }
