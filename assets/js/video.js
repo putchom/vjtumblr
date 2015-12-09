@@ -2,6 +2,25 @@ var $ = jQuery = require('./js/jquery.min.js');
 var ipc = require('ipc');
 
 $(function(){
+  // ウィンドウ読み込み時とリサイズが終わったタイミングでvideoWindowの画像を真ん中に寄せる
+  function centeringVideo() {
+    var $videoChannel = $('.video__channel'),
+        windowHeight = $(window).height(),
+        videoChannelHeight = $videoChannel.height(),
+        LetterBoxMargin = (windowHeight - videoChannelHeight)/2;
+    $videoChannel.attr('style', 'top:'+LetterBoxMargin+'px');
+  }
+  centeringVideo();
+  var timer = false;
+  $(window).resize(function() {
+    if (timer !== false) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+      centeringVideo();
+    }, 200);
+  });
+
   // コントローラーから画像URLを受け取って各チャンネルへアサインする
   ipc.on('assign-video-window', function(imageUrl, channel) {
     $('.video__channel-image-'+channel).attr('src', imageUrl);
