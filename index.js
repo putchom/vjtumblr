@@ -1,6 +1,7 @@
 var app           = require('app');
 var BrowserWindow = require('browser-window');
 var Menu          = require('menu');
+var ipc           = require('ipc');
 var mainWindow    = null;
 var videoWindow   = null;
 var aboutWindow   = null;
@@ -72,5 +73,10 @@ app.on('ready', function() {
   });
   videoWindow.on('closed', function() {
     videoWindow = null;
+  });
+
+  // videoWindowにgifをアサイン
+  ipc.on('assign-video-window', function(event, imageUrl, channel) {
+    videoWindow.webContents.send('assign-video-window', imageUrl, channel);
   });
 });

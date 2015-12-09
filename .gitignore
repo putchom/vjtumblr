@@ -5,5 +5,7 @@ vendor/
 node_modules/
 npm-debug.log
 css/style.css
-js/app.js
+js/index.js
+js/tumblrposts.js
+js/video.js
 gulp/app_config.coffee

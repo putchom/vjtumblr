@@ -1,5 +1,6 @@
 // jQueryの読み込み
-var $ = jQuery = require("./js/jquery.min.js");
+var $ = jQuery = require('./js/jquery.min.js');
+var ipc = require('ipc');
 
 $(function(){
   // gulpのreplaceタスクでapp_config.coffeeに設定したnameとapi_keyが入る
@@ -99,13 +100,17 @@ $(function(){
     });
   }
 
-  // 各チャンネルへのアサイン
+  // 各チャンネルへのアサインとvideoWindowへのアサイン
+  function assignVideoWindow(imageUrl, channel) {
+    ipc.send('assign-video-window', imageUrl, channel);
+  }
   function assignChannel(channel) {
     $('.resources__items').on('click', '.resources__item-button--'+channel, function() {
       var imageUrl = $(this).parent().find('.resources__item-image').attr('src'),
           tag = $(this).parent().find('.resources__item-tags').text(),
           resArray = tag.split(","),
           ret = '';
+      assignVideoWindow(imageUrl, channel);
       $('.channel-'+channel+'__image').attr('src', imageUrl);
       $('.master__image--'+channel).attr('src', imageUrl);
       for( var i=0 ; i<resArray.length ; i++ ) {
