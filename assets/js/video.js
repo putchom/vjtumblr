@@ -7,6 +7,12 @@ $(function(){
     $('.video__channel-image-'+channel).attr('src', imageUrl);
   });
 
+  // コントローラーからCueボタンのTapを受け取って各チャンネルの画像にCueを反映する
+  ipc.on('send-cue', function(channel, now) {
+    var imgSrc = $('.video__channel-image-'+channel).attr('src');
+    $('.video__channel-image-'+channel).attr('src', imgSrc + '?' + now);
+  });
+
   // コントローラーからClearボタンのTapを受け取って各チャンネルの画像をClearする
   ipc.on('send-clear', function(imageUrl, channel) {
     $('.video__channel-image-'+channel).attr('src', imageUrl);

@@ -123,11 +123,15 @@ $(function(){
   assignChannel('b');
 
   // Cueボタンのタップ
+  function sendCue(channel, now) {
+    ipc.send('send-cue', channel, now);
+  }
   function tapCue(channel) {
     $('.channel-'+channel+'__cue-button').on('click', function() {
       var imgSrc = $('.channel-'+channel+'__image').attr('src'),
           now = new Date().getTime();
       $('.channel-'+channel+'__image, .master__image--'+channel).attr('src', imgSrc + '?' + now);
+      sendCue(channel, now);
     });
   }
   tapCue('a');

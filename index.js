@@ -80,6 +80,11 @@ app.on('ready', function() {
     videoWindow.webContents.send('assign-video-window', imageUrl, channel);
   });
 
+  // videoWindowの各チャンネルにCueを送る
+  ipc.on('send-cue', function(event, channel, now) {
+    videoWindow.webContents.send('send-cue', channel, now);
+  });
+
   // videoWindowのgifをClearする
   ipc.on('send-clear', function(event, imageUrl, channel) {
     videoWindow.webContents.send('send-clear', imageUrl, channel);
