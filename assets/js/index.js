@@ -134,12 +134,16 @@ $(function(){
   tapCue('b');
 
   // Clearボタンのタップ
+  function sendClear(imageUrl, channel) {
+    ipc.send('send-clear', imageUrl, channel);
+  }
   function tapClear(channel) {
     $('.channel-'+channel+'__clear-button').on('click', function() {
       var defaultImagePath = './assets/images/blank_image.png';
       $('.channel-'+channel+'__image').attr('src', defaultImagePath);
       $('.master__image--'+channel).attr('src', defaultImagePath);
       $(this).parent().find('.channel__tags').children().remove();
+      sendClear(defaultImagePath, channel);
     });
   }
   tapClear('a');

@@ -7,6 +7,11 @@ $(function(){
     $('.video__channel-image-'+channel).attr('src', imageUrl);
   });
 
+  // コントローラーからClearボタンのTapを受け取って各チャンネルの画像をClearする
+  ipc.on('send-clear', function(imageUrl, channel) {
+    $('.video__channel-image-'+channel).attr('src', imageUrl);
+  });
+
   // コントローラーからABフェーダーの値を受け取って反映させる
   ipc.on('send-ab-fader-val', function(val) {
     $('.video__channel-image-a').attr('style', 'opacity:' + (1 - val/100));

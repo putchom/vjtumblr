@@ -80,6 +80,11 @@ app.on('ready', function() {
     videoWindow.webContents.send('assign-video-window', imageUrl, channel);
   });
 
+  // videoWindowのgifをClearする
+  ipc.on('send-clear', function(event, imageUrl, channel) {
+    videoWindow.webContents.send('send-clear', imageUrl, channel);
+  });
+
   // ABフェーダーの値をvideoWindowに送る
   ipc.on('send-ab-fader-val', function(event, val) {
     videoWindow.webContents.send('send-ab-fader-val', val);
