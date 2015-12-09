@@ -16,23 +16,24 @@
   left: 0;
   width: 100%;
 }
-.video__channel-a {
-  z-index: 1;
-}
-.video__channel-b {
-  z-index: 0;
+.video__channel-white,
+.video__channel-black {
+  opacity: 0;
 }
 .video__channel-image {
   width: 100%;
 }
-.video__channel-white,
-.video__channel-black {
+.video__channel-image-b {
+  opacity: 0;
+}
+.video__channel-image-white,
+.video__channel-image-black {
   width: 100%;
   height: 100%;
 }
-.video__channel-white {
+.video__channel-image-white {
   background-color: #fff;
 }
-.video__channel-white {
+.video__channel-image-black {
   background-color: #000;
 }

@@ -157,8 +157,13 @@ $(function(){
   });
 
   // 明暗切り替えフェーダー
+  function sendFaderBWVal(val) {
+    ipc.send('send-bw-fader-val', val);
+  }
   $('#fader__bw').on('input', function() {
-    $('.master__black').attr('style', 'opacity:' + (- $('#fader__bw').val()/100));
-    $('.master__white').attr('style', 'opacity:' + ($('#fader__bw').val()/100));
+    var faderBWVal = $('#fader__bw').val();
+    $('.master__black').attr('style', 'opacity:' + (- faderBWVal/100));
+    $('.master__white').attr('style', 'opacity:' + (faderBWVal/100));
+    sendFaderBWVal(faderBWVal);
   });
 });

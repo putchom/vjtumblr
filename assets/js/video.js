@@ -7,9 +7,15 @@ $(function(){
     $('.video__channel-image-'+channel).attr('src', imageUrl);
   });
 
-  // コントローラーからフェーダーの値を受け取って反映させる
+  // コントローラーからABフェーダーの値を受け取って反映させる
   ipc.on('send-ab-fader-val', function(val) {
     $('.video__channel-image-a').attr('style', 'opacity:' + (1 - val/100));
     $('.video__channel-image-b').attr('style', 'opacity:' + val/100);
+  });
+
+  // コントローラーから明暗フェーダーの値を受け取って反映させる
+  ipc.on('send-bw-fader-val', function(val) {
+    $('.video__channel-black').attr('style', 'opacity:' + (- val/100));
+    $('.video__channel-white').attr('style', 'opacity:' + (val/100));
   });
 });
