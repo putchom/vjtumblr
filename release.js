@@ -3,9 +3,9 @@ var config   = require('./package.json');
 
 packager({
   dir: './',
-  out: '../dist',
+  out: './dist',
   name: config.name,
-  platform: 'darwin',
+  platform: 'win32,darwin',
   arch: 'x64',
   version: '0.30.0',
   icon: './icon_512x512@2x.icns',
@@ -19,7 +19,7 @@ packager({
   ignore: "node_modules/(electron-packager|electron-prebuilt|\.bin)|release\.js",
   'version-string': {
     CompanyName: 'putchom',
-    FileDescription: 'tmblr VJ System',
+    FileDescription: 'Tumblr VJ System',
     OriginalFilename: config.name,
     FileVersion: config.version,
     ProductVersion: config.version,
