@@ -143,7 +143,7 @@ $(function(){
   }
   function tapClear(channel) {
     $('.channel-'+channel+'__clear-button').on('click', function() {
-      var defaultImagePath = './assets/images/blank_image.png';
+      var defaultImagePath = './assets/images/blank_image.svg';
       $('.channel-'+channel+'__image').attr('src', defaultImagePath);
       $('.master__image--'+channel).attr('src', defaultImagePath);
       $(this).parent().find('.channel__tags').children().remove();
