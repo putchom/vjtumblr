@@ -5,10 +5,10 @@ packager({
   dir: './',
   out: './dist',
   name: config.name,
-  platform: 'win32,darwin',
+  platform: 'darwin',
   arch: 'x64',
   version: '0.30.0',
-  icon: './icon_512x512@2x.icns',
+  icon: './vjt.icns',
 
   'app-bundle-id': '',
   'app-version': config.version,
