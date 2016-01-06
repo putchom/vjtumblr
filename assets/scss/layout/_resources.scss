@@ -6,10 +6,31 @@
   height: 300px;
 }
 .resources__text {
-  padding: 10px;
+  padding: 10px 5px;
+  @include container;
 }
-.resources__text-input {
+.resources__text-preview {
+  @include span(6 of 12);
+}
+.resources__text-preview-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  font-size: 1.4em;
+}
+.resources__text-controll {
+  @include span(6 of 12);
+}
+.resources__text-input-text,
+.resources__text-input-range {
   margin-bottom: 10px;
+}
+.resources__text-input-range__label {
+  display: block;
+  font-size: 13px;
+  margin: 20px 0 5px 0;
 }
 .resources__items-wrap {
   width: 100%;
@@ -65,7 +86,7 @@
 }
 .resources__description {
   font-size: 13px;
-  padding: 10px;
+  padding: 15px 10px 10px 10px;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

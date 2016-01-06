@@ -34,6 +34,10 @@
               <div class="master__image-wrap--b">
                 <img src="./assets/images/blank_image.svg" class="master__image--b">
               </div>
+              <div class="master__text">
+                <div class="master__text-inner">
+                </div>
+              </div>
               <div class="master__black">
               </div>
               <div class="master__white">
@@ -97,8 +101,19 @@
               </div>
             </div>
             <div id="text" class="resources__text u-hide">
-              <input type="text" class="c-input__text resources__text-input" placeholder="Type text">
-              <input type="range" max="100" min="0" value="0" class="c-input__range">
+              <div class="resources__text-preview">
+                <div class="c-frame c-aspect-ratio c-aspect-ratio__16-9 resources__text-preview-frame">
+                  <div class="c-aspect-ratio__inner">
+                    <div class="resources__text-preview-text"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="resources__text-controll">
+                <input type="text" class="c-input__text resources__text-input-text" placeholder="Type text">
+                <a class="c-button c-button--primary resources__text-save-button">Save</a>
+                <label class="resources__text-input-range__label">Opacity</label>
+                <input type="range" max="100" min="0" value="0" class="c-input__range resources__text-input-range">
+              </div>
             </div>
           </div>
         </section>
