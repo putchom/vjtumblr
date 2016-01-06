@@ -1,3 +1,12 @@
+.c-input__text {
+  border: 1px solid $key-color;
+  width: 100%;
+  font-size: 13px;
+  height: 30px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  outline: none;
+}
 .c-input__range {
   width: 100%;
   padding: 0;

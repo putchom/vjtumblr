@@ -67,8 +67,8 @@
         <section class="tags">
           <h2 class="c-heading">Tags</h2>
           <div class="c-frame tags__items-wrap">
-            <div class="tags__input-search-wrap">
-              <input type="text" class="tags__input-search" placeholder="Search">
+            <div class="tags__input-search">
+              <input type="text" class="c-input__text" placeholder="Search">
             </div>
             <div class="sk-wave tags__items-loading c-loading">
               <div class="sk-rect sk-rect1"></div>
@@ -83,8 +83,22 @@
         <section class="resources">
           <h2 class="c-heading">Resources</h2>
           <div class="c-frame resources__items-wrap u-clearfix">
-            <div class="resources__text">Please select a tag.</div>
-            <div class="resources__items">
+            <ul class="u-clearfix c-tab__list">
+              <li class="c-tab__list-item">
+                <a href="#images" class="c-tab__button c-tab__button--active">Images</a>
+              </li>
+              <li class="c-tab__list-item">
+                <a href="#text" class="c-tab__button">Text</a>
+              </li>
+            </ul>
+            <div id="images" class="resources__image">
+              <div class="resources__description">Please select a tag.</div>
+              <div class="resources__items">
+              </div>
+            </div>
+            <div id="text" class="resources__text u-hide">
+              <input type="text" class="c-input__text">
+              <input type="range" max="100" min="0" value="0" class="c-input__range">
             </div>
           </div>
         </section>

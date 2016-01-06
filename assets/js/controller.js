@@ -69,7 +69,7 @@ $(function(){
         $(this).addClass('tags__item--active');
       }
       $('.resources__items').empty();
-      $('.resources__text').text(searchQuery);
+      $('.resources__description').text(searchQuery);
       loadGif(searchQuery);
     });
   }
@@ -174,4 +174,13 @@ $(function(){
     $('.master__white').attr('style', 'opacity:' + (faderBWVal/100));
     sendFaderBWVal(faderBWVal);
   });
+
+  // タブ切り替え
+  $('.c-tab__button').on('click', function() {
+    $('.resources__image, .resources__text').hide();
+    $('.c-tab__button').removeClass('c-tab__button--active');
+    $(this).addClass('c-tab__button--active');
+    $($(this).attr('href')).fadeToggle();
+  });
+  return false;
 });
