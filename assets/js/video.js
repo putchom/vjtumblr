@@ -48,4 +48,9 @@ $(function(){
     $('.video__channel-black').attr('style', 'opacity:' + (- val/100));
     $('.video__channel-white').attr('style', 'opacity:' + (val/100));
   });
+
+  // コントローラーからTextを受け取って反映させる
+  ipc.on('send-text', function(text) {
+    $('.video__channel-text').text(text);
+  });
 });

@@ -99,4 +99,9 @@ app.on('ready', function() {
   ipc.on('send-bw-fader-val', function(event, val) {
     videoWindow.webContents.send('send-bw-fader-val', val);
   });
+
+  // 明暗フェーダーの値をvideoWindowに送る
+  ipc.on('send-text', function(event, text) {
+    videoWindow.webContents.send('send-text', text);
+  });
 });

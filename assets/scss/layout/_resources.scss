@@ -13,10 +13,6 @@
   @include span(6 of 12);
 }
 .resources__text-preview-text {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
   color: #fff;
   font-size: 1.4em;
 }

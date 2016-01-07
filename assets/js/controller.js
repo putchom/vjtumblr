@@ -187,5 +187,6 @@ $(function(){
   $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
     var textResource = $('.resources__text-input-text').val();
     $('.resources__text-preview-text, .master__text-inner').text(textResource);
+    ipc.send('send-text', textResource);
   });
 });
