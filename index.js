@@ -101,8 +101,8 @@ app.on('ready', function() {
   });
 
   // Textの値をvideoWindowに送る
-  ipc.on('send-text', function(event, text) {
-    videoWindow.webContents.send('send-text', text);
+  ipc.on('send-text', function(event, textResources, textFontClass) {
+    videoWindow.webContents.send('send-text', textResources, textFontClass);
   });
 
   // TextのOpacityの値をvideoWindowに送る

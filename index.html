@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Controller</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body ng-app="app" ng-controller="RootCtrl as root" class="body-controller">
@@ -112,6 +113,29 @@
               </div>
               <div class="resources__text-controll">
                 <input type="text" class="c-input__text resources__text-input-text" placeholder="Type text">
+                <label for="resources__text-font" class="c-input__select">
+                  <select name="" id="resources__text-font">
+                    <option value="source-code-pro" selected>Source Code Pro</option>
+                    <option value="open-sans">Open Sans</option>
+                    <option value="slabo">Slabo</option>
+                    <option value="raleway">Raleway</option>
+                    <option value="dosis">Dosis</option>
+                    <option value="lobster">Lobster</option>
+                    <option value="arvo">Arvo</option>
+                    <option value="inconsolata">Inconsolata</option>
+                    <option value="play">Play</option>
+                    <option value="passion-one">Passion One</option>
+                    <option value="pacifico">Pacifico</option>
+                    <option value="bangers">Bangers</option>
+                    <option value="amatic-sc">Amatic SC</option>
+                    <option value="fredoka-one">Fredoka One</option>
+                    <option value="fugaz-one">Fugaz One</option>
+                    <option value="audiowide">Audiowide</option>
+                    <option value="press-start-2p">Press Start 2P</option>
+                    <option value="unifrakturcook">UnifrakturCook</option>
+                  </select>
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </label>
                 <a class="c-button c-button--primary resources__text-save-button">Save</a>
                 <label class="resources__text-input-range__label">Opacity</label>
                 <input type="range" id="fader__text-opacity" max="100" min="0" value="0" class="c-input__range resources__text-input-range">

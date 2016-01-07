@@ -183,11 +183,17 @@ $(function(){
     $($(this).attr('href')).fadeToggle();
   });
 
-  // Textを追加する
+  // Text情報を追加する
   $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
-    var textResource = $('.resources__text-input-text').val();
-    $('.resources__text-preview-text, .master__text-inner').text(textResource);
-    ipc.send('send-text', textResource);
+    var textResource = $('.resources__text-input-text').val(),
+        textFont = $("#resources__text-font").val(),
+        textFontClass = 'c-fonts-' + textFont;
+        $textTarget = $('.resources__text-preview-text, .master__text-inner')
+    $textTarget.removeClass( function(index, className) {
+      return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
+    });
+    $textTarget.text(textResource).addClass(textFontClass);
+    ipc.send('send-text', textResource, textFontClass);
   });
 
   // TextのOpacity

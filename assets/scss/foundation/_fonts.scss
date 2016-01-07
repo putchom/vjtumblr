@@ -1,1 +1,59 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Open+Sans|Slabo+27px|Raleway|Dosis|Lobster|Arvo|Inconsolata|Play|Pacifico|Bangers|Amatic+SC|Fredoka+One|Fugaz+One|Audiowide|Press+Start+2P|UnifrakturCook:700);
+
+$common-font-family-sans-serif : 'Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif';
+$common-font-family-serif : 'Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, serif';
+
+.c-fonts-source-code-pro {
+  font-family: 'Source Code Pro', $common-font-family-sans-serif;
+}
+.c-fonts-open-sans {
+  font-family: 'Open Sans', $common-font-family-sans-serif;
+}
+.c-fonts-slabo {
+  font-family: 'Slabo 27px', $common-font-family-serif;
+}
+.c-fonts-raleway {
+  font-family: 'Raleway', $common-font-family-sans-serif;
+}
+.c-fonts-dosis {
+  font-family: 'Dosis', $common-font-family-sans-serif;
+}
+.c-fonts-lobster {
+  font-family: 'Lobster', $common-font-family-sans-serif;
+}
+.c-fonts-arvo {
+  font-family: 'Arvo', $common-font-family-serif;
+}
+.c-fonts-inconsolata {
+  font-family: 'Inconsolata', $common-font-family-sans-serif;
+}
+.c-fonts-play {
+  font-family: 'Play', $common-font-family-sans-serif;
+}
+.c-fonts-passion-one {
+  font-family: 'Passion One', $common-font-family-sans-serif;
+}
+.c-fonts-pacifico {
+  font-family: 'Pacifico', $common-font-family-serif;
+}
+.c-fonts-bangers {
+  font-family: 'Bangers', $common-font-family-sans-serif;
+}
+.c-fonts-amatic-sc {
+  font-family: 'Amatic SC', $common-font-family-sans-serif;
+}
+.c-fonts-fredoka-one {
+  font-family: 'Fredoka One', $common-font-family-serif;
+}
+.c-fonts-fugaz-one {
+  font-family: 'Fugaz One', $common-font-family-serif;
+}
+.c-fonts-audiowide {
+  font-family: 'Audiowide', $common-font-family-serif;
+}
+.c-fonts-press-start-2p {
+  font-family: 'Press Start 2P', $common-font-family-serif;
+}
+.c-fonts-unifrakturcook {
+  font-family: 'UnifrakturCook', $common-font-family-sans-serif;
+}

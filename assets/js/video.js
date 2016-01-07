@@ -50,8 +50,12 @@ $(function(){
   });
 
   // コントローラーからTextを受け取って反映させる
-  ipc.on('send-text', function(text) {
-    $('.video__channel-text-output').text(text);
+  ipc.on('send-text', function(textResources, textFontClass) {
+    var $videoChannelTextOutput = $('.video__channel-text-output');
+    $videoChannelTextOutput.removeClass( function(index, className) {
+      return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
+    });
+    $videoChannelTextOutput.text(textResources).addClass(textFontClass);
   });
 
   // コントローラーからTextのOpacityの値を受け取って反映させる
