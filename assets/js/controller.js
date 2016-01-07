@@ -189,4 +189,12 @@ $(function(){
     $('.resources__text-preview-text, .master__text-inner').text(textResource);
     ipc.send('send-text', textResource);
   });
+
+  // TextのOpacity
+  $('.resources__items-wrap').on('input', '#fader__text-opacity', function() {
+    var faderTextOpacityVal = $('#fader__text-opacity').val();
+    console.log(faderTextOpacityVal);
+    $('.master__text').attr('style', 'opacity:' + (faderTextOpacityVal/100));
+    ipc.send('send-text-opacity', faderTextOpacityVal);
+  });
 });

@@ -100,8 +100,13 @@ app.on('ready', function() {
     videoWindow.webContents.send('send-bw-fader-val', val);
   });
 
-  // 明暗フェーダーの値をvideoWindowに送る
+  // Textの値をvideoWindowに送る
   ipc.on('send-text', function(event, text) {
     videoWindow.webContents.send('send-text', text);
+  });
+
+  // TextのOpacityの値をvideoWindowに送る
+  ipc.on('send-text-opacity', function(event, textOpacity) {
+    videoWindow.webContents.send('send-text-opacity', textOpacity);
   });
 });

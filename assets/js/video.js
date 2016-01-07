@@ -51,6 +51,11 @@ $(function(){
 
   // コントローラーからTextを受け取って反映させる
   ipc.on('send-text', function(text) {
-    $('.video__channel-text').text(text);
+    $('.video__channel-text-output').text(text);
+  });
+
+  // コントローラーからTextのOpacityの値を受け取って反映させる
+  ipc.on('send-text-opacity', function(textOpacity) {
+    $('.video__channel-text').attr('style', 'opacity:' + (textOpacity/100));
   });
 });
