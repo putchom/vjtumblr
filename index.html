@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Controller</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body ng-app="app" ng-controller="RootCtrl as root" class="body-controller">
@@ -33,6 +34,10 @@
               </div>
               <div class="master__image-wrap--b">
                 <img src="./assets/images/blank_image.svg" class="master__image--b">
+              </div>
+              <div class="master__text c-aspect-ratio__table">
+                <div class="master__text-inner color-white-500">
+                </div>
               </div>
               <div class="master__black">
               </div>
@@ -67,8 +72,8 @@
         <section class="tags">
           <h2 class="c-heading">Tags</h2>
           <div class="c-frame tags__items-wrap">
-            <div class="tags__input-search-wrap">
-              <input type="text" class="tags__input-search" placeholder="Search">
+            <div class="tags__input-search">
+              <input type="text" class="c-input__text" placeholder="Search">
             </div>
             <div class="sk-wave tags__items-loading c-loading">
               <div class="sk-rect sk-rect1"></div>
@@ -83,8 +88,83 @@
         <section class="resources">
           <h2 class="c-heading">Resources</h2>
           <div class="c-frame resources__items-wrap u-clearfix">
-            <div class="resources__text">Please select a tag.</div>
-            <div class="resources__items">
+            <ul class="u-clearfix c-tab__list">
+              <li class="c-tab__list-item">
+                <a href="#images" class="c-tab__button c-tab__button--active">Images</a>
+              </li>
+              <li class="c-tab__list-item">
+                <a href="#text" class="c-tab__button">Text</a>
+              </li>
+            </ul>
+            <div id="images" class="resources__image">
+              <div class="resources__description">Please select a tag.</div>
+              <div class="resources__items">
+              </div>
+            </div>
+            <div id="text" class="resources__text u-hide">
+              <div class="resources__text-preview">
+                <div class="c-frame c-aspect-ratio c-aspect-ratio__16-9 resources__text-preview-frame">
+                  <div class="c-aspect-ratio__inner">
+                    <div class="c-aspect-ratio__table">
+                      <div class="resources__text-preview-text color-white-500"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resources__text-controll">
+                <input type="text" class="c-input__text resources__text-input-text" placeholder="Type text">
+                <label for="resources__text-font" class="c-input__select">
+                  <select name="" id="resources__text-font">
+                    <option value="source-code-pro" selected>Source Code Pro</option>
+                    <option value="open-sans">Open Sans</option>
+                    <option value="slabo">Slabo</option>
+                    <option value="raleway">Raleway</option>
+                    <option value="dosis">Dosis</option>
+                    <option value="lobster">Lobster</option>
+                    <option value="arvo">Arvo</option>
+                    <option value="inconsolata">Inconsolata</option>
+                    <option value="play">Play</option>
+                    <option value="passion-one">Passion One</option>
+                    <option value="pacifico">Pacifico</option>
+                    <option value="bangers">Bangers</option>
+                    <option value="amatic-sc">Amatic SC</option>
+                    <option value="fredoka-one">Fredoka One</option>
+                    <option value="fugaz-one">Fugaz One</option>
+                    <option value="audiowide">Audiowide</option>
+                    <option value="press-start-2p">Press Start 2P</option>
+                    <option value="unifrakturcook">UnifrakturCook</option>
+                  </select>
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </label>
+                <label for="resources__text-color" class="c-input__select">
+                  <select name="" id="resources__text-color">
+                    <option value="white" selected>White</option>
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                    <option value="deep-purple">Deep Purple</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="light-blue">Light Blue</option>
+                    <option value="cyan">Cyan</option>
+                    <option value="teal">Teal</option>
+                    <option value="green">Green</option>
+                    <option value="light-green">Light Green</option>
+                    <option value="lime">Lime</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="amber">Amber</option>
+                    <option value="orange">Orange</option>
+                    <option value="deep-orange">Deep Orange</option>
+                    <option value="brown">Brown</option>
+                    <option value="grey">Grey</option>
+                    <option value="blue-grey">Blue Grey</option>
+                  </select>
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </label>
+                <a class="c-button c-button--secondary resources__text-save-button"><i class="material-icons">done</i>Saved</a>
+                <label class="resources__text-input-range__label">Opacity</label>
+                <input type="range" id="fader__text-opacity" max="100" min="0" value="0" class="c-input__range resources__text-input-range">
+              </div>
             </div>
           </div>
         </section>

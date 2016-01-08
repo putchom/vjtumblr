@@ -99,4 +99,14 @@ app.on('ready', function() {
   ipc.on('send-bw-fader-val', function(event, val) {
     videoWindow.webContents.send('send-bw-fader-val', val);
   });
+
+  // Textの値をvideoWindowに送る
+  ipc.on('send-text', function(event, textResources, textFontClass, textColorClass) {
+    videoWindow.webContents.send('send-text', textResources, textFontClass, textColorClass);
+  });
+
+  // TextのOpacityの値をvideoWindowに送る
+  ipc.on('send-text-opacity', function(event, textOpacity) {
+    videoWindow.webContents.send('send-text-opacity', textOpacity);
+  });
 });

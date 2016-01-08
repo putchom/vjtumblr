@@ -48,4 +48,21 @@ $(function(){
     $('.video__channel-black').attr('style', 'opacity:' + (- val/100));
     $('.video__channel-white').attr('style', 'opacity:' + (val/100));
   });
+
+  // コントローラーからTextを受け取って反映させる
+  ipc.on('send-text', function(textResources, textFontClass, textColorClass) {
+    var $videoChannelTextOutput = $('.video__channel-text-output');
+    $videoChannelTextOutput.removeClass( function(index, className) {
+      return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
+    });
+    $videoChannelTextOutput.removeClass( function(index, className) {
+      return (className.match(/\bcolor-\S+/g) || []).join(' ');
+    });
+    $videoChannelTextOutput.text(textResources).addClass(textFontClass).addClass(textColorClass);
+  });
+
+  // コントローラーからTextのOpacityの値を受け取って反映させる
+  ipc.on('send-text-opacity', function(textOpacity) {
+    $('.video__channel-text-output').attr('style', 'opacity:' + (textOpacity/100));
+  });
 });

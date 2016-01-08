@@ -69,7 +69,7 @@ $(function(){
         $(this).addClass('tags__item--active');
       }
       $('.resources__items').empty();
-      $('.resources__text').text(searchQuery);
+      $('.resources__description').text(searchQuery);
       loadGif(searchQuery);
     });
   }
@@ -173,5 +173,82 @@ $(function(){
     $('.master__black').attr('style', 'opacity:' + (- faderBWVal/100));
     $('.master__white').attr('style', 'opacity:' + (faderBWVal/100));
     sendFaderBWVal(faderBWVal);
+  });
+
+  // タブ切り替え
+  $('.c-tab__button').on('click', function() {
+    $('.resources__image, .resources__text').hide();
+    $('.c-tab__button').removeClass('c-tab__button--active');
+    $(this).addClass('c-tab__button--active');
+    $($(this).attr('href')).fadeToggle();
+  });
+
+  // Text情報を更新する
+  function refreshText(target) {
+    var textResource = $('.resources__text-input-text').val();
+    target.text(textResource);
+  }
+  function refreshTextFont(target) {
+    var textFontClass = 'c-fonts-' + $('#resources__text-font').val();
+    target.removeClass( function(index, className) {
+      return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
+    }).addClass(textFontClass);
+  }
+  function refreshTextColor(target) {
+    var textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
+    target.removeClass( function(index, className) {
+      return (className.match(/\bcolor-\S+/g) || []).join(' ');
+    }).addClass(textColorClass);
+  }
+  function sendTextInfo() {
+    var textResource = $('.resources__text-input-text').val(),
+        textFontClass = 'c-fonts-' + $('#resources__text-font').val(),
+        textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
+    ipc.send('send-text', textResource, textFontClass, textColorClass);
+  }
+  function saveButtonRefresh(buttonClass) {
+    var $saveButton = $('.resources__text-save-button'),
+        $checkIcon = '<i class="material-icons">done</i>';
+    $saveButton.removeClass( function(index, className) {
+      return (className.match(/\bc-button--\S+/g) || []).join(' ');
+    });
+    if(buttonClass === 'save') {
+      $saveButton.addClass('c-button--secondary').html($checkIcon + 'Saved');
+    } else if(buttonClass === 'modify') {
+      $saveButton.addClass('c-button--primary').html('Save');
+    }
+  }
+  function realTimeRefresh(trigger, method, func) {
+    $('.resources__items-wrap').on(method, trigger, function() {
+      var $previewText = $('.resources__text-preview-text');
+      saveButtonRefresh('modify');
+      func($previewText);
+    });
+  }
+
+  // Saveボタンクリックで各情報を更新する
+  $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
+    var $masterText = $('.master__text-inner');
+    saveButtonRefresh('save');
+    refreshText($masterText);
+    refreshTextFont($masterText);
+    refreshTextColor($masterText);
+    sendTextInfo();
+  });
+
+  // Textを更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('.resources__text-input-text', 'keyup', refreshText);
+
+  // Textのフォントを更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('#resources__text-font', 'change', refreshTextFont);
+
+  // Textの色を更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('#resources__text-color', 'change', refreshTextColor);
+
+  // TextのOpacity
+  $('.resources__items-wrap').on('input', '#fader__text-opacity', function() {
+    var faderTextOpacityVal = $('#fader__text-opacity').val();
+    $('.master__text').attr('style', 'opacity:' + (faderTextOpacityVal/100));
+    ipc.send('send-text-opacity', faderTextOpacityVal);
   });
 });

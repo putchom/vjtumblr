@@ -1,0 +1,31 @@
+.c-tab__list {
+  padding: 10px 10px 0 10px;
+  border-bottom: 1px solid $key-color;
+}
+.c-tab__list-item {
+  float: left;
+  list-style: none;
+  margin-bottom: -1px;
+}
+.c-tab__button {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid $key-color;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 30px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  color: $key-color;
+  margin-right: 5px;
+  vertical-align: bottom;
+  background-color: $key-color-black;
+}
+.c-tab__button--active {
+  border-bottom: none;
+}
