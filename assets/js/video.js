@@ -50,12 +50,15 @@ $(function(){
   });
 
   // コントローラーからTextを受け取って反映させる
-  ipc.on('send-text', function(textResources, textFontClass) {
+  ipc.on('send-text', function(textResources, textFontClass, textColorClass) {
     var $videoChannelTextOutput = $('.video__channel-text-output');
     $videoChannelTextOutput.removeClass( function(index, className) {
       return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
     });
-    $videoChannelTextOutput.text(textResources).addClass(textFontClass);
+    $videoChannelTextOutput.removeClass( function(index, className) {
+      return (className.match(/\bcolor-\S+/g) || []).join(' ');
+    });
+    $videoChannelTextOutput.text(textResources).addClass(textFontClass).addClass(textColorClass);
   });
 
   // コントローラーからTextのOpacityの値を受け取って反映させる

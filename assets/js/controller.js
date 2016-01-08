@@ -186,14 +186,19 @@ $(function(){
   // Text情報を追加する
   $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
     var textResource = $('.resources__text-input-text').val(),
-        textFont = $("#resources__text-font").val(),
-        textFontClass = 'c-fonts-' + textFont;
-        $textTarget = $('.resources__text-preview-text, .master__text-inner')
+        textFont = $('#resources__text-font').val(),
+        textFontClass = 'c-fonts-' + textFont,
+        textColor = $('#resources__text-color').val(),
+        textColorClass = 'color-' + textColor + '-500',
+        $textTarget = $('.resources__text-preview-text, .master__text-inner');
     $textTarget.removeClass( function(index, className) {
       return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
     });
-    $textTarget.text(textResource).addClass(textFontClass);
-    ipc.send('send-text', textResource, textFontClass);
+    $textTarget.removeClass( function(index, className) {
+      return (className.match(/\bcolor-\S+/g) || []).join(' ');
+    });
+    $textTarget.text(textResource).addClass(textFontClass).addClass(textColorClass);
+    ipc.send('send-text', textResource, textFontClass, textColorClass);
   });
 
   // TextのOpacity
