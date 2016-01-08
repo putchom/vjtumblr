@@ -183,28 +183,59 @@ $(function(){
     $($(this).attr('href')).fadeToggle();
   });
 
-  // Text情報を追加する
-  $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
-    var textResource = $('.resources__text-input-text').val(),
-        textFont = $('#resources__text-font').val(),
-        textFontClass = 'c-fonts-' + textFont,
-        textColor = $('#resources__text-color').val(),
-        textColorClass = 'color-' + textColor + '-500',
-        $textTarget = $('.resources__text-preview-text, .master__text-inner');
-    $textTarget.removeClass( function(index, className) {
+  // Text情報を更新する
+  function refreshText(target) {
+    var textResource = $('.resources__text-input-text').val();
+    target.text(textResource);
+  }
+  function refreshTextFont(target) {
+    var textFontClass = 'c-fonts-' + $('#resources__text-font').val();
+    target.removeClass( function(index, className) {
       return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
     });
-    $textTarget.removeClass( function(index, className) {
+    target.addClass(textFontClass);
+  }
+  function refreshTextColor(target) {
+    var textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
+    target.removeClass( function(index, className) {
       return (className.match(/\bcolor-\S+/g) || []).join(' ');
     });
-    $textTarget.text(textResource).addClass(textFontClass).addClass(textColorClass);
+    target.addClass(textColorClass);
+  }
+  function sendTextInfo() {
+    var textResource = $('.resources__text-input-text').val(),
+        textFontClass = 'c-fonts-' + $('#resources__text-font').val(),
+        textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
     ipc.send('send-text', textResource, textFontClass, textColorClass);
+  }
+  function realTimeRefresh(trigger, method, func) {
+    $('.resources__items-wrap').on(method, trigger, function() {
+      var $previewText = $('.resources__text-preview-text');
+      func($previewText);
+    });
+  }
+
+  // Saveボタンクリックで各情報を更新する
+  $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
+    var $masterText = $('.master__text-inner');
+    refreshText($masterText);
+    refreshTextFont($masterText);
+    refreshTextColor($masterText);
+    sendTextInfo();
   });
+
+  // Textを更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('.resources__text-input-text', 'keyup', refreshText);
+
+  // Textのフォントを更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('#resources__text-font', 'change', refreshTextFont);
+
+  // Textの色を更新したときにPreviewをリアルタイムに更新する
+  realTimeRefresh('#resources__text-color', 'change', refreshTextColor);
 
   // TextのOpacity
   $('.resources__items-wrap').on('input', '#fader__text-opacity', function() {
     var faderTextOpacityVal = $('#fader__text-opacity').val();
-    console.log(faderTextOpacityVal);
     $('.master__text').attr('style', 'opacity:' + (faderTextOpacityVal/100));
     ipc.send('send-text-opacity', faderTextOpacityVal);
   });
