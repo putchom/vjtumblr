@@ -18,15 +18,30 @@
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
+  -webkit-transition-property: background-color,width,height;
+  -webkit-transition-duration: .2s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
   &:active {
     outline: 0;
+  }
+  i {
+    font-size: 14px;
+    vertical-align: middle;
+    margin: -3px 3px 0 -4px;
   }
 }
 .c-button--primary {
   background-color: $key-color;
   color: $key-color-black;
+  &:hover {
+    background-color: lighten($key-color, 5%);
+  }
 }
 .c-button--secondary {
   background-color: $key-color-grey;
   color: white;
+  &:hover {
+    background-color: lighten($key-color-grey, 5%);
+  }
 }

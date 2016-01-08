@@ -192,15 +192,13 @@ $(function(){
     var textFontClass = 'c-fonts-' + $('#resources__text-font').val();
     target.removeClass( function(index, className) {
       return (className.match(/\bc-fonts-\S+/g) || []).join(' ');
-    });
-    target.addClass(textFontClass);
+    }).addClass(textFontClass);
   }
   function refreshTextColor(target) {
     var textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
     target.removeClass( function(index, className) {
       return (className.match(/\bcolor-\S+/g) || []).join(' ');
-    });
-    target.addClass(textColorClass);
+    }).addClass(textColorClass);
   }
   function sendTextInfo() {
     var textResource = $('.resources__text-input-text').val(),
@@ -208,9 +206,22 @@ $(function(){
         textColorClass = 'color-' + $('#resources__text-color').val() + '-500';
     ipc.send('send-text', textResource, textFontClass, textColorClass);
   }
+  function saveButtonRefresh(buttonClass) {
+    var $saveButton = $('.resources__text-save-button'),
+        $checkIcon = '<i class="material-icons">done</i>';
+    $saveButton.removeClass( function(index, className) {
+      return (className.match(/\bc-button--\S+/g) || []).join(' ');
+    });
+    if(buttonClass === 'save') {
+      $saveButton.addClass('c-button--secondary').html($checkIcon + 'Saved');
+    } else if(buttonClass === 'modify') {
+      $saveButton.addClass('c-button--primary').html('Save');
+    }
+  }
   function realTimeRefresh(trigger, method, func) {
     $('.resources__items-wrap').on(method, trigger, function() {
       var $previewText = $('.resources__text-preview-text');
+      saveButtonRefresh('modify');
       func($previewText);
     });
   }
@@ -218,6 +229,7 @@ $(function(){
   // Saveボタンクリックで各情報を更新する
   $('.resources__items-wrap').on('click', '.resources__text-save-button', function() {
     var $masterText = $('.master__text-inner');
+    saveButtonRefresh('save');
     refreshText($masterText);
     refreshTextFont($masterText);
     refreshTextColor($masterText);
