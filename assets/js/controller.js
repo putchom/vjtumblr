@@ -83,7 +83,6 @@ $(function(){
         timeout_id = null;
 
     input.on('keyup', function(){
-      console.log('hoge');
       if(timeout_id) clearTimeout(timeout_id);
       timeout_id = setTimeout(function(){
         timeout_id = null;
