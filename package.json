@@ -4,8 +4,9 @@
   "description": "tumblr VJ System",
   "main": "index.js",
   "scripts": {
-    "release": "node release.js",
-    "build": "node_modules/.bin/electron ."
+    "watch":"gulp",
+    "start": "node_modules/.bin/electron .",
+    "release": "node release.js"
   },
   "devDependencies": {
     "electron-packager": "^5.1.1",

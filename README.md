@@ -19,9 +19,9 @@ module.exports =
 The following commands will then be available from the repository root:
 
 ```
-$ npm install       # install node dependencies
-$ gulp watch        # watch for changes and build automatically
-$ yarn run build    # build app
+$ yarn              # install node dependencies
+$ yarn run watch    # watch for changes and build automatically
+$ yarn run start    # start app
 ```
 
 ## Release
