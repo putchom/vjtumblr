@@ -8,7 +8,9 @@ VJ software using Tumblr API.
 
 [👉Download VJ Tumblr v1.0.1 for macOS](https://github.com/putchom/vjtumblr/releases)
 
-## Building
+## Quick start developer guide
+
+### Building
 
 You first need to make `app_config.coffee` file to `gulp/`.
 
@@ -28,7 +30,7 @@ $ yarn run watch    # watch for changes and build automatically
 $ yarn run start    # start app
 ```
 
-## Release
+### Packaging
 
 ```
 $ yarn run release
