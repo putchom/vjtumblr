@@ -1,10 +1,10 @@
 path =
   src:
-    css: './assets/scss'
-    js: './assets/js'
+    css: './assets/stylesheets'
+    js: './assets/javascripts'
   dest:
-    css: './css/'
-    js: './js/'
+    css: './stylesheets/'
+    js: './javascripts/'
 
 module.exports =
   path: path

@@ -1,4 +1,4 @@
-var $ = jQuery = require('./js/jquery.min.js');
+var $ = jQuery = require('./javascripts/jquery.min.js');
 var ipc = require('ipc');
 
 $(function(){

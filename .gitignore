@@ -4,8 +4,8 @@ dist/
 vendor/
 node_modules/
 npm-debug.log
-css/style.css
-js/controller.js
-js/tumblrposts.js
-js/video.js
+stylesheets/style.css
+javascripts/controller.js
+javascripts/tumblrposts.js
+javascripts/video.js
 gulp/app_config.coffee
