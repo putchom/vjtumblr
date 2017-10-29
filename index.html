@@ -7,9 +7,19 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body ng-app="app" ng-controller="RootCtrl as root" class="body-controller">
-    <div class="main">
+    <div class="login js-login-form u-hide">
+      <div class="login__inner">
+        <img class="login__logo" src="./assets/images/vjt.png">
+        <input class="c-input__text login__textarea js-login-textarea" type="text" placeholder="Please type your Tumblr account name.">
+        <button class="c-button login__button js-login-button">Enter</button>
+      </div>
+    </div>
+    <div class="main js-controller u-hide">
       <section class="main__heading-wrap">
-        <h1 class="main__heading">VJ Tumblr ver.1.0.0</h1>
+        <h1 class="main__heading">VJ Tumblr ver.1.0.1</h1>
+        <div class="main__heading-action">
+          <button class="js-logout-button">Exit</button>
+        </div>
       </section>
       <section class="monitor u-clearfix">
         <section class="monitor__item channel-a">

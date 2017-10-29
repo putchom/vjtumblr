@@ -16,8 +16,13 @@ html {
   @include container;
 }
 .main__heading {
-  @include span(12 of 12);
+  @include span(11 of 12);
   margin: 10px 0;
+}
+.main__heading-action {
+  @include span(1 of 12);
+  margin: 10px 0;
+  text-align: right;
 }
 .c-heading {
   background-color: $key-color;
