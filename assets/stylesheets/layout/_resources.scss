@@ -90,3 +90,34 @@
 .resources__item-tags {
   visibility: hidden;
 }
+
+.resources__comment {
+  padding: 10px;
+}
+
+.resources__comment-form {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.resources__comment-textfield {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.resources__comment-stream {
+  tr {
+    cursor: pointer;
+  }
+  th {
+    vertical-align: top;
+    text-align: right;
+    padding: 4px;
+  }
+  td {
+    color: #ffffff;
+    vertical-align: top;
+    text-align: left;
+    padding: 4px;
+  }
+}

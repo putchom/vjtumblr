@@ -20,7 +20,7 @@ $(function(){
 
     // gulpのreplaceタスクでapp_config.coffeeに設定したapi_keyが入る
     var userName = localStorage.getItem('accountName'),
-        api_key = 'data_api_key';
+        api_key = 'data_tumblr_api_key';
 
     // tumblr画像の読み込み
     function loadGif(tag) {
@@ -191,7 +191,7 @@ $(function(){
 
     // タブ切り替え
     $('.c-tab__button').on('click', function() {
-      $('.resources__image, .resources__text').hide();
+      $('.resources__image, .resources__text, .resources__comment').hide();
       $('.c-tab__button').removeClass('c-tab__button--active');
       $(this).addClass('c-tab__button--active');
       $($(this).attr('href')).fadeToggle();
