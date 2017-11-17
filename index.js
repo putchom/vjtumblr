@@ -114,4 +114,9 @@ app.on('ready', function() {
   ipc.on('send-bullet', function(event, bullet) {
     videoWindow.webContents.send('send-bullet', bullet);
   });
+
+  // コメントのOpacityの値をvideoWindowに送る
+  ipc.on('send-comment-opacity', function(event, commentOpacity) {
+    videoWindow.webContents.send('send-comment-opacity', commentOpacity);
+  });
 });

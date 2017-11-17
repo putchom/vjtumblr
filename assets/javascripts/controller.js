@@ -265,6 +265,12 @@ $(function(){
       $('.master__text').attr('style', 'opacity:' + (faderTextOpacityVal/100));
       ipc.send('send-text-opacity', faderTextOpacityVal);
     });
+
+    // CommentのOpacity
+    $('.resources__items-wrap').on('input', '#js-comment-opacity', function() {
+      var faderCommentOpacityVal = $('#js-comment-opacity').val();
+      ipc.send('send-comment-opacity', faderCommentOpacityVal);
+    });
   }
 
   $('.js-logout-button').on('click', function() {
