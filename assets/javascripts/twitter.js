@@ -26,7 +26,7 @@ $(function(){
     client.get('search/tweets', {q: search_query}, function(error, tweets, response) {
       $.each(tweets.statuses, function(i, tweet) {
         var random_color = '#'+Math.floor(Math.random()*16777215).toString(16);
-        var comment = '<tr><th style="color:'+ random_color +';">@' + tweet.user.screen_name + ': </th><td>' + tweet.text + '</td></tr>';
+        var comment = '<tr class="js-comment-tr"><th style="color:'+ random_color +';">@' + tweet.user.screen_name + ': </th><td>' + tweet.text + '</td></tr>';
         $('.js-comment-stream').prepend(comment);
       });
     });
@@ -37,13 +37,15 @@ $(function(){
     client.stream('statuses/filter', {track: search_query},  function(stream) {
       stream.on('data', function(tweet) {
         var random_color = '#'+Math.floor(Math.random()*16777215).toString(16);
-        var comment = '<tr><th style="color:'+ random_color +';">@' + tweet.user.screen_name + ': </th><td>' + tweet.text + '</td></tr>';
+        var comment = '<tr class="js-comment-tr"><th style="color:'+ random_color +';">@' + tweet.user.screen_name + ': </th><td>' + tweet.text + '</td></tr>';
+        var bullet = tweet.text;
         $('.js-comment-stream').prepend(comment);
+        ipc.send('send-bullet', bullet);
       });
 
       stream.on('error', function(error) {
         var random_color = '#'+Math.floor(Math.random()*16777215).toString(16);
-        $('.js-comment-stream').prepend('<tr><th style="color:'+ random_color +';">@vjtumblr: </th><td style="color: red;">' + error + '</td></tr>');
+        $('.js-comment-stream').prepend('<tr class="js-comment-tr"><th><span style="color:'+ random_color +';">@vjtumblr: </span></th><td><span style="color: red;">' + error + '</span></td></tr>');
       });
 
       currentTwitterStream = stream;
@@ -57,5 +59,11 @@ $(function(){
       currentTwitterStream = null;
     }
   }
+
+  // コメントをクリックした時にvideoWindowにコメント内容を送る
+  $('.js-comment-stream').on('click', '.js-comment-tr', function() {
+    var bullet = $(this).children('td').html();
+    ipc.send('send-bullet', bullet);
+  });
 
 });
