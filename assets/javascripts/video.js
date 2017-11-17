@@ -68,6 +68,6 @@ $(function(){
 
   // コントローラーからコメントを受け取って反映させる
   ipc.on('send-bullet', function(bullet) {
-    $('.js-video-bullet').prepend(bullet);
+    $('.js-video-bullet').comment(bullet);
   });
 });
