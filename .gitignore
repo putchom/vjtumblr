@@ -8,4 +8,6 @@ stylesheets/style.css
 javascripts/controller.js
 javascripts/tumblrposts.js
 javascripts/video.js
+javascripts/twitter.js
+javascripts/nncomment.js
 gulp/app_config.coffee

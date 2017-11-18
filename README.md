@@ -16,7 +16,13 @@ You first need to make `app_config.coffee` file to `gulp/`.
 
 ```js
 data =
-  api_key: 'yourConsumerKey'
+  tumblr:
+    consumer_key: 'yourTumblrConsumerKey'
+  twitter:
+    consumer_key: 'yourTwitterConsumerKey'
+    consumer_secret: 'yourTwitterConsumerSecret'
+    access_token_key: 'yourTwitterAccessTokenKey'
+    access_token_secret: 'yourTwitterAccessTokenSecret'
 
 module.exports =
   data: data

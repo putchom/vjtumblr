@@ -4,7 +4,7 @@
   "description": "tumblr VJ System",
   "main": "index.js",
   "scripts": {
-    "watch":"gulp",
+    "watch": "gulp",
     "start": "node_modules/.bin/electron .",
     "release": "node release.js"
   },
@@ -25,6 +25,7 @@
     "gulp-util": "^3.0.7",
     "material-colors": "^1.0.0",
     "spinkit": "^1.2.5",
-    "susy": "^2.2.6"
+    "susy": "^2.2.6",
+    "twitter": "^1.7.1"
   }
 }

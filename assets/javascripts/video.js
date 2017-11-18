@@ -65,4 +65,14 @@ $(function(){
   ipc.on('send-text-opacity', function(textOpacity) {
     $('.video__channel-text-output').attr('style', 'opacity:' + (textOpacity/100));
   });
+
+  // コントローラーからコメントを受け取って反映させる
+  ipc.on('send-bullet', function(bullet) {
+    $('.js-video-bullet').comment(bullet);
+  });
+
+  // コントローラーからコメントのOpacityの値を受け取って反映させる
+  ipc.on('send-comment-opacity', function(commentOpacity) {
+    $('.js-video-bullet').attr('style', 'opacity:' + (commentOpacity/100));
+  });
 });

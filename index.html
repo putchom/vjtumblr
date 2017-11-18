@@ -105,6 +105,9 @@
               <li class="c-tab__list-item">
                 <a href="#text" class="c-tab__button">Text</a>
               </li>
+              <li class="c-tab__list-item">
+                <a href="#comment" class="c-tab__button">Comment</a>
+              </li>
             </ul>
             <div id="images" class="resources__image">
               <div class="resources__description">Please select a tag.</div>
@@ -176,11 +179,25 @@
                 <input type="range" id="fader__text-opacity" max="100" min="0" value="0" class="c-input__range resources__text-input-range">
               </div>
             </div>
+            <div id="comment" class="resources__comment u-hide">
+              <div class="resources__comment-form">
+                <div class="resources__comment-textfield">
+                  <input type="text" class="c-input__text js-comment-textfield" placeholder="Type twitter trend word.">
+                </div>
+                <div>
+                  <button class="c-button js-comment-submit-button">Search</button>
+                </div>
+              </div>
+              <input type="range" id="js-comment-opacity" max="100" min="0" value="100" class="c-input__range resources__text-input-range">
+              <table class="resources__comment-stream js-comment-stream">
+              </table>
+            </div>
           </div>
         </section>
       </div>
     </div>
     <script type="text/javascript" src="./javascripts/controller.js"></script>
     <script type="text/javascript" src="./javascripts/tumblrposts.js"></script>
+    <script type="text/javascript" src="./javascripts/twitter.js"></script>
   </body>
 </html>

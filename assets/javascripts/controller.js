@@ -20,7 +20,7 @@ $(function(){
 
     // gulpのreplaceタスクでapp_config.coffeeに設定したapi_keyが入る
     var userName = localStorage.getItem('accountName'),
-        api_key = 'data_api_key';
+        api_key = 'data_tumblr_consumer_key';
 
     // tumblr画像の読み込み
     function loadGif(tag) {
@@ -191,7 +191,7 @@ $(function(){
 
     // タブ切り替え
     $('.c-tab__button').on('click', function() {
-      $('.resources__image, .resources__text').hide();
+      $('.resources__image, .resources__text, .resources__comment').hide();
       $('.c-tab__button').removeClass('c-tab__button--active');
       $(this).addClass('c-tab__button--active');
       $($(this).attr('href')).fadeToggle();
@@ -264,6 +264,12 @@ $(function(){
       var faderTextOpacityVal = $('#fader__text-opacity').val();
       $('.master__text').attr('style', 'opacity:' + (faderTextOpacityVal/100));
       ipc.send('send-text-opacity', faderTextOpacityVal);
+    });
+
+    // CommentのOpacity
+    $('.resources__items-wrap').on('input', '#js-comment-opacity', function() {
+      var faderCommentOpacityVal = $('#js-comment-opacity').val();
+      ipc.send('send-comment-opacity', faderCommentOpacityVal);
     });
   }
 
