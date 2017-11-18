@@ -20,7 +20,7 @@ $(function(){
 
     // gulpのreplaceタスクでapp_config.coffeeに設定したapi_keyが入る
     var userName = localStorage.getItem('accountName'),
-        api_key = 'data_tumblr_api_key';
+        api_key = 'data_tumblr_consumer_key';
 
     // tumblr画像の読み込み
     function loadGif(tag) {
